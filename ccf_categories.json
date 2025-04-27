@@ -1,0 +1,375 @@
+{
+  "categories": [
+    {
+      "name": "数据库/数据挖掘/内容检索",
+      "journals": [
+        {
+          "abbreviation": "TODS",
+          "fullName": "ACM Transactions on Database Systems",
+          "publisher": "ACM",
+          "url": "http://dblp.uni-trier.de/db/journals/tods/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "TOIS",
+          "fullName": "ACM Transactions on Information Systems",
+          "publisher": "ACM",
+          "url": "http://dblp.uni-trier.de/db/journals/tois/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "TKDE",
+          "fullName": "IEEE Transactions on Knowledge and Data Engineering",
+          "publisher": "IEEE",
+          "url": "http://dblp.uni-trier.de/db/journals/tkde/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "VLDBJ",
+          "fullName": "The VLDB Journal",
+          "publisher": "Springer",
+          "url": "http://dblp.uni-trier.de/db/journals/vldb/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "TKDD",
+          "fullName": "ACM Transactions on Knowledge Discovery from Data",
+          "publisher": "ACM",
+          "url": "http://dblp.uni-trier.de/db/journals/tkdd/",
+          "level": "B"
+        },
+        {
+          "abbreviation": "TWEB",
+          "fullName": "ACM Transactions on the Web",
+          "publisher": "ACM",
+          "url": "http://dblp.uni-trier.de/db/journals/tweb/",
+          "level": "B"
+        },
+        {
+          "abbreviation": "AEI",
+          "fullName": "Advanced Engineering Informatics",
+          "publisher": "Elsevier",
+          "url": "http://dblp.uni-trier.de/db/journals/aei/",
+          "level": "B"
+        },
+        {
+          "abbreviation": "DKE",
+          "fullName": "Data & Knowledge Engineering",
+          "publisher": "Elsevier",
+          "url": "http://dblp.uni-trier.de/db/journals/dke/",
+          "level": "B"
+        },
+        {
+          "abbreviation": "DMKD",
+          "fullName": "Data Mining and Knowledge Discovery",
+          "publisher": "Springer",
+          "url": "http://dblp.uni-trier.de/db/journals/datamine/",
+          "level": "B"
+        },
+        {
+          "abbreviation": "EJIS",
+          "fullName": "European Journal of Information Systems",
+          "publisher": "Springer",
+          "url": "http://dblp.uni-trier.de/db/journals/ejis/",
+          "level": "B"
+        },
+        {
+          "abbreviation": "IPM",
+          "fullName": "Information Processing and Management",
+          "publisher": "Elsevier",
+          "url": "http://dblp.uni-trier.de/db/journals/ipm/",
+          "level": "B"
+        },
+        {
+          "abbreviation": "IS",
+          "fullName": "Information Systems",
+          "publisher": "Elsevier",
+          "url": "http://dblp.uni-trier.de/db/journals/is/",
+          "level": "B"
+        },
+        {
+          "abbreviation": "JASIST",
+          "fullName": "Journal of the Association for Information Science and Technology",
+          "publisher": "Wiley",
+          "url": "http://dblp.uni-trier.de/db/journals/jasis/",
+          "level": "B"
+        },
+        {
+          "abbreviation": "JWS",
+          "fullName": "Journal of Web Semantics",
+          "publisher": "Elsevier",
+          "url": "http://dblp.uni-trier.de/db/journals/ws/",
+          "level": "B"
+        },
+        {
+          "abbreviation": "KAIS",
+          "fullName": "Knowledge and Information Systems",
+          "publisher": "Springer",
+          "url": "http://dblp.uni-trier.de/db/journals/kais/",
+          "level": "B"
+        }
+      ],
+      "conferences": [
+        {
+          "abbreviation": "SIGMOD",
+          "fullName": "ACM SIGMOD Conference",
+          "publisher": "ACM",
+          "url": "http://dblp.uni-trier.de/db/conf/sigmod/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "SIGKDD",
+          "fullName": "ACM SIGKDD Conference on Knowledge Discovery and Data Mining",
+          "publisher": "ACM",
+          "url": "http://dblp.uni-trier.de/db/conf/kdd/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "ICDE",
+          "fullName": "IEEE International Conference on Data Engineering",
+          "publisher": "IEEE",
+          "url": "http://dblp.uni-trier.de/db/conf/icde/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "SIGIR",
+          "fullName": "International ACM SIGIR Conference on Research and Development in Information Retrieval",
+          "publisher": "ACM",
+          "url": "http://dblp.uni-trier.de/db/conf/sigir/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "VLDB",
+          "fullName": "International Conference on Very Large Data Bases",
+          "publisher": "Morgan Kaufmann/ACM",
+          "url": "http://dblp.uni-trier.de/db/conf/vldb/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "CIKM",
+          "fullName": "ACM International Conference on Information and Knowledge Management",
+          "publisher": "ACM",
+          "url": "http://dblp.uni-trier.de/db/conf/cikm/",
+          "level": "B"
+        },
+        {
+          "abbreviation": "WSDM",
+          "fullName": "ACM International Conference on Web Search and Data Mining",
+          "publisher": "ACM",
+          "url": "http://dblp.uni-trier.de/db/conf/wsdm/",
+          "level": "B"
+        },
+        {
+          "abbreviation": "PODS",
+          "fullName": "ACM SIGMOD-SIGACT-SIGAI Symposium on Principles of Database Systems",
+          "publisher": "ACM",
+          "url": "http://dblp.uni-trier.de/db/conf/pods/",
+          "level": "B"
+        }
+      ]
+    },
+    {
+      "name": "人工智能",
+      "journals": [
+        {
+          "abbreviation": "AI",
+          "fullName": "Artificial Intelligence",
+          "publisher": "Elsevier",
+          "url": "http://dblp.uni-trier.de/db/journals/ai/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "TPAMI",
+          "fullName": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+          "publisher": "IEEE",
+          "url": "http://dblp.uni-trier.de/db/journals/pami/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "IJCV",
+          "fullName": "International Journal of Computer Vision",
+          "publisher": "Springer",
+          "url": "http://dblp.uni-trier.de/db/journals/ijcv/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "JMLR",
+          "fullName": "Journal of Machine Learning Research",
+          "publisher": "MIT Press",
+          "url": "http://dblp.uni-trier.de/db/journals/jmlr/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "TAP",
+          "fullName": "ACM Transactions on Applied Perception",
+          "publisher": "ACM",
+          "url": "http://dblp.uni-trier.de/db/journals/tap/",
+          "level": "B"
+        },
+        {
+          "abbreviation": "TSLP",
+          "fullName": "ACM Transactions on Speech and Language Processing",
+          "publisher": "ACM",
+          "url": "http://dblp.uni-trier.de/db/journals/tslp/",
+          "level": "B"
+        }
+      ],
+      "conferences": [
+        {
+          "abbreviation": "AAAI",
+          "fullName": "AAAI Conference on Artificial Intelligence",
+          "publisher": "AAAI",
+          "url": "http://dblp.uni-trier.de/db/conf/aaai/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "NeurIPS",
+          "fullName": "Conference on Neural Information Processing Systems",
+          "publisher": "MIT Press",
+          "url": "http://dblp.uni-trier.de/db/conf/nips/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "ACL",
+          "fullName": "Annual Meeting of the Association for Computational Linguistics",
+          "publisher": "ACL",
+          "url": "http://dblp.uni-trier.de/db/conf/acl/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "CVPR",
+          "fullName": "IEEE/CVF Computer Vision and Pattern Recognition Conference",
+          "publisher": "IEEE",
+          "url": "http://dblp.uni-trier.de/db/conf/cvpr/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "ICCV",
+          "fullName": "International Conference on Computer Vision",
+          "publisher": "IEEE",
+          "url": "http://dblp.uni-trier.de/db/conf/iccv/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "ICML",
+          "fullName": "International Conference on Machine Learning",
+          "publisher": "ACM",
+          "url": "http://dblp.uni-trier.de/db/conf/icml/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "IJCAI",
+          "fullName": "International Joint Conference on Artificial Intelligence",
+          "publisher": "Morgan Kaufmann",
+          "url": "http://dblp.uni-trier.de/db/conf/ijcai/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "COLT",
+          "fullName": "Annual Conference on Computational Learning Theory",
+          "publisher": "Springer",
+          "url": "http://dblp.uni-trier.de/db/conf/colt/",
+          "level": "B"
+        },
+        {
+          "abbreviation": "EMNLP",
+          "fullName": "Conference on Empirical Methods in Natural Language Processing",
+          "publisher": "ACL",
+          "url": "http://dblp.uni-trier.de/db/conf/emnlp/",
+          "level": "B"
+        }
+      ]
+    },
+    {
+      "name": "交叉/综合/新兴",
+      "journals": [
+        {
+          "abbreviation": "JACM",
+          "fullName": "Journal of the ACM",
+          "publisher": "ACM",
+          "url": "http://dblp.uni-trier.de/db/journals/jacm/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "Proc. IEEE",
+          "fullName": "Proceedings of the IEEE",
+          "publisher": "IEEE",
+          "url": "http://dblp.uni-trier.de/db/journals/pieee/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "SCIS",
+          "fullName": "Science China Information Sciences",
+          "publisher": "Science in China Press/Springer",
+          "url": "http://dblp.uni-trier.de/db/journals/chinaf/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "Bioinformatics",
+          "fullName": "Bioinformatics",
+          "publisher": "Oxford University Press",
+          "url": "http://dblp.uni-trier.de/db/journals/bioinformatics/",
+          "level": "B"
+        },
+        {
+          "abbreviation": "Cognition",
+          "fullName": "Cognition",
+          "publisher": "Elsevier",
+          "url": "http://www.journals.elsevier.com/cognition/",
+          "level": "B"
+        },
+        {
+          "abbreviation": "TASAE",
+          "fullName": "IEEE Transactions on Automation Science and Engineering",
+          "publisher": "IEEE",
+          "url": "http://dblp.uni-trier.de/db/journals/tase/",
+          "level": "B"
+        }
+      ],
+      "conferences": [
+        {
+          "abbreviation": "WWW",
+          "fullName": "International World Wide Web Conference",
+          "publisher": "ACM",
+          "url": "http://dblp.uni-trier.de/db/conf/www/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "RTSS",
+          "fullName": "IEEE Real-Time Systems Symposium",
+          "publisher": "IEEE",
+          "url": "http://dblp.uni-trier.de/db/conf/rtss/",
+          "level": "A"
+        },
+        {
+          "abbreviation": "WINE",
+          "fullName": "Conference on Web and Internet Economics",
+          "publisher": "Springer",
+          "url": "https://dblp.org/db/conf/wine/index.html",
+          "level": "A"
+        },
+        {
+          "abbreviation": "CogSci",
+          "fullName": "Annual Meeting of the Cognitive Science Society",
+          "publisher": "Psychology Press",
+          "url": "https://dblp.uni-trier.de/db/conf/cogsci/",
+          "level": "B"
+        },
+        {
+          "abbreviation": "BIBM",
+          "fullName": "IEEE International Conference on Bioinformatics and Biomedicine",
+          "publisher": "IEEE",
+          "url": "http://dblp.uni-trier.de/db/conf/bibm/",
+          "level": "B"
+        },
+        {
+          "abbreviation": "EMSOFT",
+          "fullName": "International Conference on Embedded Software",
+          "publisher": "ACM/IEEE/IFIP",
+          "url": "http://dblp.uni-trier.de/db/conf/emsoft/",
+          "level": "B"
+        }
+      ]
+    }
+  ]
+} 
