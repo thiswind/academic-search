@@ -17,12 +17,45 @@
     color: #1976d2;
 }
 
+/* 悬浮搜索按钮 */
+.ai-search-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #4285f4;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-size: 20px;
+}
+
+.ai-search-toggle:hover {
+    background-color: #3367d6;
+}
+
+/* 悬浮搜索框 */
 .ai-search-box {
-    margin: 20px 0;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
     padding: 15px;
-    border: 1px solid #ddd;
     border-radius: 8px;
     background-color: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    display: none;
+}
+
+.ai-search-box.visible {
+    display: block;
 }
 
 .ai-search-box textarea {
@@ -48,11 +81,21 @@
     background-color: #3367d6;
 }
 
+.ai-search-box .close-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
 .keyword-suggestions {
     margin-top: 10px;
     padding: 10px;
     background-color: #f8f9fa;
     border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 .keyword-group {
@@ -66,6 +109,32 @@
 
 .keyword-group:hover {
     background-color: #f1f3f4;
+}
+
+/* 加载指示器 */
+.loader {
+    display: none;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.loader.visible {
+    display: block;
+}
+
+.spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #4285f4;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .chat-history {

@@ -1,5 +1,7 @@
 // 监听安装事件
 chrome.runtime.onInstalled.addListener(() => {
+    console.log('Scholar CCF Helper 已安装');
+    
     // 设置默认配置
     chrome.storage.sync.get([
         'baseUrl',
@@ -13,13 +15,16 @@ chrome.runtime.onInstalled.addListener(() => {
         }
         if (!items.modelId) {
             chrome.storage.sync.set({
-                modelId: 'gpt-4'
+                modelId: 'gpt-4o'
             });
         }
         if (!items.systemPrompt) {
             chrome.storage.sync.set({
-                systemPrompt: '你是一个学术搜索助手。你的任务是帮助用户将他们的研究需求转化为专业的学术搜索关键词。请分析用户的描述，识别相关研究领域，并提供1-3组专业的搜索关键词组合。每组关键词应该简洁且具有专业性。'
+                systemPrompt: '你是一个学术搜索助手。你的任务是帮助用户将他们的研究需求转化为专业的学术搜索关键词。请分析用户的描述，识别相关研究领域，并提供1-3组专业的搜索关键词组合。每组关键词应该简洁且具有专业性。请按行分隔每组关键词，不要添加编号或其他格式。'
             });
         }
     });
+    
+    // 注册web_accessible_resources
+    chrome.runtime.getManifest().web_accessible_resources;
 }); 

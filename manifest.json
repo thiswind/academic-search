@@ -12,12 +12,18 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://scholar.google.com/*", "*://scholar.google.com.hk/*"],
+      "matches": ["*://scholar.google.com/*", "*://scholar.google.com.hk/*", "*://scholar.google.co.jp/*", "*://scholar.google.co.uk/*"],
       "js": ["content.js"],
       "css": ["styles.css"]
     }
   ],
   "background": {
     "service_worker": "background.js"
-  }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["ccf_categories.json"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 } 

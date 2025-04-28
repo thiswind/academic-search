@@ -1,27 +1,32 @@
 // CCF分类数据
 let ccfData = null;
 
-// 聊天历史记录
-let chatHistory = [];
-const MAX_CHAT_HISTORY = 50;
-
 // 加载CCF数据
 fetch(chrome.runtime.getURL('ccf_categories.json'))
     .then(response => response.json())
     .then(data => {
         ccfData = data;
         processPapers();
-    });
+        // 增加定期检查新论文的功能
+        setInterval(processPapers, 2000);
+    })
+    .catch(error => console.error('Error loading CCF data:', error));
 
 // 处理论文条目
 function processPapers() {
+    console.log('Processing papers...');
     const papers = document.querySelectorAll('.gs_ri');
     papers.forEach(paper => {
+        // 检查是否已经处理过
+        if (paper.querySelector('.ccf-info')) return;
+        
         const venueElement = paper.querySelector('.gs_a');
         if (venueElement) {
             const venueText = venueElement.textContent;
+            console.log('Venue text:', venueText);
             const ccfInfo = findCCFInfo(venueText);
             if (ccfInfo) {
+                console.log('CCF info found:', ccfInfo);
                 displayCCFInfo(paper, ccfInfo);
             }
         }
@@ -73,38 +78,76 @@ function displayCCFInfo(paperElement, ccfInfo) {
     paperElement.appendChild(infoDiv);
 }
 
-// 创建AI搜索框
-function createAISearchBox() {
+// 创建AI搜索按钮和框
+function createAISearchFeature() {
+    // 创建悬浮按钮
+    const toggleButton = document.createElement('div');
+    toggleButton.className = 'ai-search-toggle';
+    toggleButton.innerHTML = 'AI';
+    toggleButton.title = 'AI辅助搜索';
+    document.body.appendChild(toggleButton);
+
+    // 创建搜索框
     const searchBox = document.createElement('div');
     searchBox.className = 'ai-search-box';
     searchBox.innerHTML = `
+        <span class="close-button">&times;</span>
+        <h3>AI辅助搜索</h3>
         <textarea placeholder="请描述您要搜索的研究内容..."></textarea>
         <button>获取搜索建议</button>
+        <div class="loader">
+            <div class="spinner"></div>
+            <p>正在生成搜索建议...</p>
+        </div>
         <div class="keyword-suggestions"></div>
-        <div class="chat-history"></div>
     `;
+    document.body.appendChild(searchBox);
 
-    // 插入到搜索框下方
-    const searchForm = document.querySelector('#gs_hdr_frm');
-    if (searchForm) {
-        searchForm.parentNode.insertBefore(searchBox, searchForm.nextSibling);
-    }
+    // 绑定切换事件
+    toggleButton.addEventListener('click', () => {
+        searchBox.classList.toggle('visible');
+    });
 
-    // 绑定事件
+    // 绑定关闭按钮
+    searchBox.querySelector('.close-button').addEventListener('click', () => {
+        searchBox.classList.remove('visible');
+    });
+
+    // 绑定搜索事件
     const button = searchBox.querySelector('button');
     button.addEventListener('click', () => {
         const textarea = searchBox.querySelector('textarea');
         getSearchSuggestions(textarea.value, searchBox);
     });
 
-    // 加载聊天历史
-    loadChatHistory();
-    displayChatHistory(searchBox);
+    // 阻止事件冒泡
+    searchBox.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+
+    // 点击其他地方关闭搜索框
+    document.addEventListener('click', (e) => {
+        if (!searchBox.contains(e.target) && e.target !== toggleButton) {
+            searchBox.classList.remove('visible');
+        }
+    });
 }
 
 // 获取搜索建议
 async function getSearchSuggestions(query, searchBox) {
+    if (!query.trim()) {
+        alert('请输入您要搜索的内容');
+        return;
+    }
+
+    const loader = searchBox.querySelector('.loader');
+    const suggestionsDiv = searchBox.querySelector('.keyword-suggestions');
+    
     try {
+        // 显示加载指示器
+        loader.classList.add('visible');
+        suggestionsDiv.innerHTML = '';
+
         // 获取设置
         const settings = await new Promise(resolve => {
             chrome.storage.sync.get([
@@ -114,6 +157,11 @@ async function getSearchSuggestions(query, searchBox) {
                 'systemPrompt'
             ], resolve);
         });
+
+        // 检查API设置
+        if (!settings.apiKey) {
+            throw new Error('未设置API Key，请点击插件图标进行设置');
+        }
 
         const response = await fetch(`${settings.baseUrl}/chat/completions`, {
             method: 'POST',
@@ -136,26 +184,23 @@ async function getSearchSuggestions(query, searchBox) {
             })
         });
 
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(`API请求失败: ${errorData.error?.message || response.statusText}`);
+        }
+
         const data = await response.json();
         const suggestions = data.choices[0].message.content;
 
-        // 保存到聊天历史
-        saveChatHistory({
-            role: 'user',
-            content: query
-        });
-        saveChatHistory({
-            role: 'assistant',
-            content: suggestions
-        });
-
         // 显示建议
         displaySuggestions(suggestions, searchBox);
-        displayChatHistory(searchBox);
 
     } catch (error) {
         console.error('Error getting suggestions:', error);
-        alert('获取搜索建议时出错，请检查API设置是否正确。');
+        suggestionsDiv.innerHTML = `<div class="error-message">出错: ${error.message}</div>`;
+    } finally {
+        // 隐藏加载指示器
+        loader.classList.remove('visible');
     }
 }
 
@@ -166,6 +211,11 @@ function displaySuggestions(suggestions, searchBox) {
 
     // 将建议文本按行分割，每行作为一组关键词
     const keywordGroups = suggestions.split('\n').filter(group => group.trim());
+
+    if (keywordGroups.length === 0) {
+        suggestionsDiv.innerHTML = `<div class="no-suggestions">无法生成建议，请尝试更详细的描述</div>`;
+        return;
+    }
 
     keywordGroups.forEach(group => {
         const groupDiv = document.createElement('div');
@@ -183,56 +233,15 @@ function displaySuggestions(suggestions, searchBox) {
     });
 }
 
-// 保存聊天历史
-function saveChatHistory(message) {
-    chatHistory.push({
-        ...message,
-        timestamp: new Date().toISOString()
-    });
-
-    // 保持最大限制
-    if (chatHistory.length > MAX_CHAT_HISTORY) {
-        chatHistory = chatHistory.slice(-MAX_CHAT_HISTORY);
-    }
-
-    // 保存到storage
-    chrome.storage.local.set({ chatHistory });
-}
-
-// 加载聊天历史
-function loadChatHistory() {
-    chrome.storage.local.get(['chatHistory'], (result) => {
-        if (result.chatHistory) {
-            chatHistory = result.chatHistory;
-        }
-    });
-}
-
-// 显示聊天历史
-function displayChatHistory(searchBox) {
-    const historyDiv = searchBox.querySelector('.chat-history');
-    historyDiv.innerHTML = '';
-
-    chatHistory.forEach(message => {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `chat-message ${message.role}-message`;
-        messageDiv.textContent = `${message.content}`;
-        historyDiv.appendChild(messageDiv);
-    });
-
-    // 滚动到底部
-    historyDiv.scrollTop = historyDiv.scrollHeight;
-}
-
 // 初始化
-createAISearchBox();
+createAISearchFeature();
 
-// 监听URL变化，重新处理论文
+// 监听URL变化
 let lastUrl = location.href;
 new MutationObserver(() => {
     const url = location.href;
     if (url !== lastUrl) {
         lastUrl = url;
-        processPapers();
+        setTimeout(processPapers, 1000); // 延迟一秒，等待页面加载
     }
 }).observe(document, { subtree: true, childList: true }); 
