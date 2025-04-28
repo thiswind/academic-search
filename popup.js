@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ], function(items) {
         document.getElementById('apiKey').value = items.apiKey || '';
         document.getElementById('baseUrl').value = items.baseUrl || 'https://api.openai.com/v1';
-        document.getElementById('modelId').value = items.modelId || 'gpt-4';
+        document.getElementById('modelId').value = items.modelId || 'gpt-4o';
         document.getElementById('systemPrompt').value = items.systemPrompt || document.getElementById('systemPrompt').value;
     });
 
