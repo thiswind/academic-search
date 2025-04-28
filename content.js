@@ -73,7 +73,7 @@ function displayCCFInfo(paperElement, ccfInfo) {
         ${ccfInfo.type === 'journal' ? '期刊' : '会议'}: 
         ${ccfInfo.venue.abbreviation} (${ccfInfo.venue.fullName}) | 
         出版商: ${ccfInfo.venue.publisher} | 
-        <span class="ccf-level">CCF ${ccfInfo.venue.level}</span>
+        <span class="ccf-level ccf-level-${ccfInfo.venue.level}">CCF ${ccfInfo.venue.level}</span>
     `;
     paperElement.appendChild(infoDiv);
 }

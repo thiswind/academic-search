@@ -1,20 +1,42 @@
 .ccf-info {
     margin-top: 5px;
-    padding: 5px;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    background-color: #f8f9fa;
+    padding: 8px 10px;
+    border-radius: 6px;
     font-size: 13px;
-    color: #666;
+    background-color: #f0f7ff;
+    color: #0c5460;
+    border-left: 4px solid #4285f4;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .ccf-level {
     font-weight: bold;
-    color: #d32f2f;
+    color: #ffffff;
+    background-color: #d32f2f;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 2px;
 }
 
 .ccf-category {
-    color: #1976d2;
+    color: #ffffff;
+    background-color: #1976d2;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 2px;
+}
+
+/* CCF 等级特定样式 */
+.ccf-level-A {
+    background-color: #d32f2f;
+}
+
+.ccf-level-B {
+    background-color: #ff9800;
+}
+
+.ccf-level-C {
+    background-color: #4caf50;
 }
 
 /* 悬浮搜索按钮 */
