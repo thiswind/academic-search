@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Scholar CCF Helper",
+  "version": "1.0",
+  "description": "在谷歌学术搜索结果中显示CCF分类信息，并提供AI辅助搜索功能",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://scholar.google.com/*", "*://scholar.google.com.hk/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+} 

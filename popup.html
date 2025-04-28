@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            width: 400px;
+            padding: 10px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 5px;
+        }
+        textarea {
+            height: 100px;
+        }
+        .status {
+            margin-top: 10px;
+            padding: 5px;
+            display: none;
+        }
+        .success {
+            background-color: #dff0d8;
+            color: #3c763d;
+        }
+        .error {
+            background-color: #f2dede;
+            color: #a94442;
+        }
+    </style>
+</head>
+<body>
+    <h2>Scholar CCF Helper 设置</h2>
+    <div class="form-group">
+        <label for="apiKey">OpenAI API Key:</label>
+        <input type="password" id="apiKey">
+    </div>
+    <div class="form-group">
+        <label for="baseUrl">API Base URL:</label>
+        <input type="text" id="baseUrl" placeholder="https://api.openai.com/v1">
+    </div>
+    <div class="form-group">
+        <label for="modelId">模型 ID:</label>
+        <input type="text" id="modelId" placeholder="gpt-4">
+    </div>
+    <div class="form-group">
+        <label for="systemPrompt">系统提示:</label>
+        <textarea id="systemPrompt">你是一个学术搜索助手。你的任务是帮助用户将他们的研究需求转化为专业的学术搜索关键词。请分析用户的描述，识别相关研究领域，并提供1-3组专业的搜索关键词组合。每组关键词应该简洁且具有专业性。</textarea>
+    </div>
+    <button id="saveButton">保存设置</button>
+    <div id="status" class="status"></div>
+
+    <script src="popup.js"></script>
+</body>
+</html> 
