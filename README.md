@@ -22,6 +22,15 @@ Scholar CCF Helper 是一个Chrome扩展程序，为谷歌学术搜索增加两�
 
 ## 安装方法
 
+### 直接安装打包好的扩展
+1. [点击下载扩展文件](https://github.com/thiswind/academic-search/raw/main/academic-search.crx)
+2. 打开Chrome浏览器，访问 `chrome://extensions/`
+3. 开启右上角的"开发者模式"
+4. 将下载的 `.crx` 文件拖放到扩展页面中
+5. 在弹出的确认对话框中点击"添加扩展程序"
+
+> 注意：如果Chrome阻止安装，可以使用开发者模式安装（见下文）
+
 ### 开发者模式安装
 1. 克隆或下载本仓库到本地
 2. 打开Chrome浏览器，访问 `chrome://extensions/`
