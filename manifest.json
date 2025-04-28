@@ -3,18 +3,33 @@
   "name": "Scholar CCF Helper",
   "version": "1.0",
   "description": "在谷歌学术搜索结果中显示CCF分类信息，并提供AI辅助搜索功能",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
   "permissions": [
     "storage",
     "activeTab"
   ],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
   },
   "content_scripts": [
     {
-      "matches": ["*://scholar.google.com/*", "*://scholar.google.com.hk/*", "*://scholar.google.co.jp/*", "*://scholar.google.co.uk/*"],
-      "js": ["content.js"],
-      "css": ["styles.css"]
+      "matches": [
+        "*://scholar.google.com/*",
+        "*://scholar.google.com.hk/*",
+        "*://scholar.google.co.jp/*",
+        "*://scholar.google.co.uk/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ]
     }
   ],
   "background": {
@@ -22,8 +37,12 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["ccf_categories.json"],
-      "matches": ["<all_urls>"]
+      "resources": [
+        "ccf_categories.json"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
     }
   ]
-} 
+}

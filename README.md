@@ -1,5 +1,7 @@
 # Scholar CCF Helper
 
+<p align="center"><img src="icon.png" width="200" alt="Scholar CCF Helper Logo"></p>
+
 Scholar CCF Helper 是一个Chrome扩展程序，为谷歌学术搜索增加两个实用功能：
 1. 自动识别并显示论文的CCF分类信息
 2. 提供AI辅助搜索功能，帮助生成专业的搜索关键词
@@ -37,6 +39,10 @@ Scholar CCF Helper 是一个Chrome扩展程序，为谷歌学术搜索增加两�
    - API Base URL: API基础URL（默认为`https://api.openai.com/v1`）
    - 模型ID: 使用的模型（如`gpt-4o`）
    - 系统提示: 指导AI生成搜索建议的系统提示词
+
+## 效果展示
+
+<p align="center"><img src="screenshot.png" width="800" alt="Scholar CCF Helper 效果截图"></p>
 
 ## 使用方法
 
